@@ -55,4 +55,11 @@ public class UserService {
         return userRepo.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
     }
+
+    public void deleteUser(int id) {
+        if (!userRepo.existsById(id)) {
+            throw new ResourceNotFoundException("User not found with id: " + id);
+        }
+        userRepo.deleteById(id);
+    }
 }

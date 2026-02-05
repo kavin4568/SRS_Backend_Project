@@ -28,4 +28,11 @@ public class CategoryService {
     public Category getCategoryById(Long id) {
         return categoryRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
     }
+
+    public void deleteCategory(Long id) {
+        if (!categoryRepo.existsById(id)) {
+            throw new ResourceNotFoundException("Category not found with id: " + id);
+        }
+        categoryRepo.deleteById(id);
+    }
 }

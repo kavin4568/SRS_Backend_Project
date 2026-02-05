@@ -59,4 +59,10 @@ public class UserController {
     public User getUserByEmail(@PathVariable String email) {
         return userService.getUserByEmail(email);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable int id) {
+        userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
