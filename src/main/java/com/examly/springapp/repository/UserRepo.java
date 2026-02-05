@@ -1,14 +1,14 @@
-// package com.examly.springapp.repository;
+package com.examly.springapp.repository;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
-// import org.springframework.stereotype.Repository;
-// import com.examly.springapp.model.User;
-// import java.util.List;
-// import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.examly.springapp.model.User;
+import java.util.List;
+import java.util.Optional;
 
-// @Repository
-// public interface UserRepo extends JpaRepository<User,Integer>{
-//     List<User> findByRole(String role);
-//     Optional<User> findByEmail(String email);
-//     Optional<User> findByUsername(String username);
-// }
+@Repository
+public interface UserRepo extends JpaRepository<User,Integer>{
+    List<User> findByRole(String role);
+    Optional<User> findByEmail(String email);
+    Optional<User> findByUsername(String username);
+}
