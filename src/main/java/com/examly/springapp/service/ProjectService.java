@@ -42,10 +42,11 @@ public class ProjectService {
         return projects;
     }
 
-    public void deleteProject(Long id) {
+    public String deleteProject(Long id) {
         if (!projectRepo.existsById(id)) {
             throw new ResourceNotFoundException("Project not found with id: " + id);
         }
         projectRepo.deleteById(id);
+        return "Project with id " + id + " deleted successfully";
     }
 }

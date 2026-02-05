@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.examly.springapp.model.Project;
 import com.examly.springapp.service.ProjectService;
+import com.examly.springapp.dto.MessageResponse;
 
 @RestController
 @RequestMapping("/api/projects")
@@ -41,9 +42,9 @@ public class ProjectController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
-        projectService.deleteProject(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<MessageResponse> deleteProject(@PathVariable Long id) {
+        String message = projectService.deleteProject(id);
+        return new ResponseEntity<>(new MessageResponse(message), HttpStatus.OK);
     }
 }
 

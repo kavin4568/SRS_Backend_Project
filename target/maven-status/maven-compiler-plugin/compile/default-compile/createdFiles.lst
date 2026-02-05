@@ -15,6 +15,7 @@ com\examly\springapp\repository\CategoryRepo.class
 com\examly\springapp\aop\LoggingAspect.class
 com\examly\springapp\model\Project.class
 com\examly\springapp\model\Ticket.class
+com\examly\springapp\dto\MessageResponse.class
 com\examly\springapp\repository\CommentRepo.class
 com\examly\springapp\controller\UserController.class
 com\examly\springapp\repository\TicketRepo.class
